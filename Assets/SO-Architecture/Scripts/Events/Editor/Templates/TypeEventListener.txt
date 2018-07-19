@@ -1,0 +1,28 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace SOArchitecture.Events {
+
+    public class TYPE_PASCALEventListener : BaseGameEventListener<TYPE_DEFAULT> {
+
+        public TYPE_PASCALGameEvent GameEvent;
+        public TYPE_PASCALUnityEvent GameResponse;
+
+        protected override BaseGameEvent<TYPE_DEFAULT> Event
+        {
+            get
+            {
+                return GameEvent;
+            }
+        }
+
+        protected override UnityEvent<TYPE_DEFAULT> Response
+        {
+            get
+            {
+                return GameResponse;
+            }
+        }
+    }
+}
