@@ -1,9 +1,11 @@
 using UnityEngine;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events
+{
 
     [CreateAssetMenu(fileName = "NewStateChangedGameEvent", menuName = "SO Architecture/Events/StateChangedGameEvent")]
-    public class StateChangedGameEvent : BaseGameEvent<bool> {
+    public class StateChangedGameEvent : BaseGameEvent<bool>
+    {
 
     }
 }

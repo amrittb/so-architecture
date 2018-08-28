@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events
+{
 
-    public class SimpleGameEventListener : MonoBehaviour {
+    public class SimpleGameEventListener : MonoBehaviour
+    {
 
         public SimpleGameEvent Event;
         public UnityEvent Response;
 
-        private void OnEnable() {
+        private void OnEnable()
+        {
             Event.RegisterListener(this);
         }
 
-        private void OnDisable() {
+        private void OnDisable()
+        {
             Event.UnregisterListener(this);
         }
 
-        public void OnEventRaised() {
+        public void OnEventRaised()
+        {
             Response.Invoke();
         }
     }

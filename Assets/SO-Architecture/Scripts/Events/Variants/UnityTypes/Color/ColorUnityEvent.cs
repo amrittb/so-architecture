@@ -2,7 +2,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
-public class ColorUnityEvent : UnityEvent<Color> {
-    
+namespace SOArchitecture.Events
+{
+
+    [Serializable]
+    public class ColorUnityEvent : UnityEvent<Color>
+    {
+
+    }
 }

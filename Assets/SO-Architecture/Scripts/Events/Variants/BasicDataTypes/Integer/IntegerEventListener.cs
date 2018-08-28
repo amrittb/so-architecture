@@ -2,9 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events
+{
 
-    public class IntegerEventListener : BaseGameEventListener<int> {
+    public class IntegerEventListener : BaseGameEventListener<int>
+    {
 
         public IntegerGameEvent GameEvent;
         public IntegerUnityEvent GameResponse;

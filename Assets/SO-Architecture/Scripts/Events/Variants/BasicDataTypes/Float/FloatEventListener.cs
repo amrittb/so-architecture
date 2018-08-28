@@ -2,9 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events
+{
 
-    public class FloatEventListener : BaseGameEventListener<float> {
+    public class FloatEventListener : BaseGameEventListener<float>
+    {
 
         public FloatGameEvent GameEvent;
         public FloatUnityEvent GameResponse;

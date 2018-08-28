@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SO-Architecture/Examples/Variables/HPVariable.unity
+    guid: 277d8ab90087fe446b71954c77e8638b

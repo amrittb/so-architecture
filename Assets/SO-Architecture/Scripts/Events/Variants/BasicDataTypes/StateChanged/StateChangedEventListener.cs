@@ -2,9 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events
+{
 
-    public class StateChangedEventListener : BaseGameEventListener<bool> {
+    public class StateChangedEventListener : BaseGameEventListener<bool>
+    {
 
         public StateChangedGameEvent GameEvent;
         public StateChangedUnityEvent GameResponse;

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events 
+{
 
     [CreateAssetMenu(fileName = "NewTYPE_PASCALGameEvent", menuName = "SO Architecture/Events/TYPE_PASCALGameEvent")]
-    public class TYPE_PASCALGameEvent : BaseGameEvent<TYPE_DEFAULT> {
+    public class TYPE_PASCALGameEvent : BaseGameEvent<TYPE_DEFAULT> 
+    {
 
     }
 }

@@ -1,9 +1,11 @@
 using UnityEngine;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events
+{
 
     [CreateAssetMenu(fileName = "NewQuaternionGameEvent", menuName = "SO Architecture/Events/QuaternionGameEvent")]
-    public class QuaternionGameEvent : BaseGameEvent<Quaternion> {
+    public class QuaternionGameEvent : BaseGameEvent<Quaternion>
+    {
 
     }
 }

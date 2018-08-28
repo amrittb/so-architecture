@@ -2,9 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events
+{
 
-    public class QuaternionEventListener : BaseGameEventListener<Quaternion> {
+    public class QuaternionEventListener : BaseGameEventListener<Quaternion>
+    {
 
         public QuaternionGameEvent GameEvent;
         public QuaternionUnityEvent GameResponse;

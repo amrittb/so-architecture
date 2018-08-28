@@ -1,39 +1,63 @@
 ﻿using UnityEngine;
 
-namespace SOArchitecture.Variables {
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
-    public abstract class  Variable<T> : ScriptableObject {
+namespace SOArchitecture.Variables
+{
 
-        public T DefaultValue;
+    public abstract class Variable<T> : BaseVariable
+    {
+
+        [SerializeField]
+        private T DefaultValue;
 
         public T CurrentValue;
 
-        public bool ResetChange;
+        [SerializeField]
+        private bool ResetChange;
 
-        public void SetValue(T value) {
+        public void SetValue(T value)
+        {
             CurrentValue = value;
         }
 
-        public void SetValue(Variable<T> value) {
+        public void SetValue(Variable<T> value)
+        {
             CurrentValue = value.CurrentValue;
         }
 
-        protected virtual void OnEnable() {
-            ResetValue();
-        }
+        protected virtual void OnEnable()
+        {
+#if UNITY_EDITOR
+            if (ResetChange && EditorApplication.isPlayingOrWillChangePlaymode)
+            {
+                ResetValue();
+            }
+#endif
 
-        protected virtual void OnDisable() {
-            ResetValue();
-        }
-
-        public void ResetValue() {
-            if (ResetChange) {
-                CurrentValue = DefaultValue;
+            if (ResetChange && Application.isPlaying)
+            {
+                ResetValue();
             }
         }
 
-        public void ForceResetValue() {
+        protected void ResetValue()
+        {
             CurrentValue = DefaultValue;
+        }
+
+        public static implicit operator T(Variable<T> variable)
+        {
+            return variable.CurrentValue;
+        }
+
+        public abstract void ApplyChange(T amount);
+
+        public void ApplyChange(Variable<T> amount)
+        {
+            this.ApplyChange(amount.CurrentValue);
         }
 
 #if UNITY_EDITOR

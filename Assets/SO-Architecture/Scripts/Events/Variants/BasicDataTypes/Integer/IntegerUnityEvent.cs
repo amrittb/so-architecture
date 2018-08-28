@@ -2,7 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
-public class IntegerUnityEvent : UnityEvent<int> {
-    
+namespace SOArchitecture.Events
+{
+
+    [Serializable]
+    public class IntegerUnityEvent : UnityEvent<int>
+    {
+
+    }
 }

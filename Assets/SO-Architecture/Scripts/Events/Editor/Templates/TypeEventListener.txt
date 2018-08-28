@@ -2,9 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events 
+{
 
-    public class TYPE_PASCALEventListener : BaseGameEventListener<TYPE_DEFAULT> {
+    public class TYPE_PASCALEventListener : BaseGameEventListener<TYPE_DEFAULT> 
+    {
 
         public TYPE_PASCALGameEvent GameEvent;
         public TYPE_PASCALUnityEvent GameResponse;

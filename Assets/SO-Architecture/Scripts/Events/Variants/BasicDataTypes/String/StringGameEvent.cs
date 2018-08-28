@@ -1,9 +1,11 @@
 using UnityEngine;
 
-namespace SOArchitecture.Events {
+namespace SOArchitecture.Events
+{
 
     [CreateAssetMenu(fileName = "NewStringGameEvent", menuName = "SO Architecture/Events/StringGameEvent")]
-    public class StringGameEvent : BaseGameEvent<string> {
+    public class StringGameEvent : BaseGameEvent<string>
+    {
 
     }
 }

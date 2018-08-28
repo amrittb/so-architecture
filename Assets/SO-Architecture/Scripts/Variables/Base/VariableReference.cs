@@ -1,9 +1,11 @@
 ﻿using System;
 
-namespace SOArchitecture.Variables {
+namespace SOArchitecture.Variables
+{
 
     [Serializable]
-    public class VariableReference<T, U> : BaseVariableReference where T : Variable<U> {
+    public abstract class VariableReference<T, U> : BaseVariableReference where T : Variable<U>
+    {
 
         public bool UseConstant = true;
         public U ConstantValue;
@@ -23,9 +25,12 @@ namespace SOArchitecture.Variables {
             get { return UseConstant ? ConstantValue : Variable.CurrentValue; }
             set
             {
-                if(UseConstant) {
+                if (UseConstant)
+                {
                     ConstantValue = value;
-                } else {
+                }
+                else
+                {
                     Variable.CurrentValue = value;
                 }
             }
@@ -35,5 +40,31 @@ namespace SOArchitecture.Variables {
         {
             return reference.Value;
         }
+
+        public virtual void ApplyChange(VariableReference<T, U> reference)
+        {
+            ApplyChange(reference.Value);
+        }
+
+        public virtual void ApplyChange(T amount)
+        {
+            ApplyChange(amount.CurrentValue);
+        }
+
+        public virtual void ApplyChange(U amount)
+        {
+            if (UseConstant)
+            {
+                ApplyChangeToConstant(amount);
+            }
+            else
+            {
+                Variable.ApplyChange(amount);
+            }
+        }
+
+
+
+        protected abstract void ApplyChangeToConstant(U amount);
     }
 }

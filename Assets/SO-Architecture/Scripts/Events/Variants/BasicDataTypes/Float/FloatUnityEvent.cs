@@ -2,7 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
-public class FloatUnityEvent : UnityEvent<float> {
-    
+namespace SOArchitecture.Events
+{
+
+    [Serializable]
+    public class FloatUnityEvent : UnityEvent<float>
+    {
+
+    }
 }
